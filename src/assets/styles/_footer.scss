@@ -1,0 +1,22 @@
+.footer {
+  margin-top: auto;
+  text-align: center;
+  font-weight: 800;
+  font-size: 81px;
+  line-height: calc(108 / 81);
+  text-transform: uppercase;
+  color: transparent;
+  transform: translateY(27%);
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.05);
+  -webkit-text-fill-color: transparent;
+  // text-stroke: 1px rgba(255, 255, 255, 0.05);
+  // text-fill-color: transparent;
+  @media screen and (min-width: 1200px) {
+    font-size: 107px;
+    line-height: calc(158 / 107);
+  }
+  @media screen and (min-width: 1440px) {
+    font-size: 129.359px;
+    line-height: calc(158 / 129.359);
+  }
+}

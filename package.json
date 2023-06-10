@@ -1,0 +1,64 @@
+{
+  "name": "rgb-tt",
+  "version": "1.0.0",
+  "private": true,
+  "description": "rgb-tt",
+  "author": "Lina Budkova",
+  "keywords": [
+    "gatsby"
+  ],
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "lint-and-fix": "npx eslint src --ext .js,.jsx --fix"
+  },
+  "dependencies": {
+    "@hookform/resolvers": "^3.1.0",
+    "axios": "^1.4.0",
+    "gatsby": "^5.10.0",
+    "gatsby-plugin-sass": "^6.10.0",
+    "modern-normalize": "^2.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-hook-form": "^7.44.3",
+    "react-phone-number-input": "^3.2.23",
+    "react-responsive": "^9.0.2",
+    "sass": "^1.63.3",
+    "yup": "^1.2.0"
+  },
+  "eslintIgnore": [
+    "node_modules/"
+  ],
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "eslint": "^8.40.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "prettier": "^2.8.8"
+  }
+}

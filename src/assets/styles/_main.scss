@@ -1,0 +1,28 @@
+.main {
+  position: relative;
+  @media screen and (min-width: 768px) {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 60px;
+  }
+  @media screen and (min-width: 1200px) {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 92px;
+  }
+}
+.home-page {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+.main__group {
+  position: absolute;
+  width: 199px;
+  height: 383px;
+  right: -178px;
+  top: 127.81px;
+}
+// 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
