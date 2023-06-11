@@ -8,7 +8,9 @@ const List = () => {
   return (
     <ul className="list">
       <li className="list__item">
-        <img className="list__img" src={pic1} alt="Pic 1" />
+        <div className="list__item-img">
+          <img className="list__img" src={pic1} alt="Pic 1" />
+        </div>
         <div>
           <p className="list__title list__title--upper">
             Кирилл <span>&nbsp;КАСАТОНОВ</span>
@@ -19,8 +21,10 @@ const List = () => {
           </p>
         </div>
       </li>
-      <li className="list__item">
-        <img className="list__img" src={pic2} alt="Pic 2" />
+      <li className="list__item list__item--box">
+        <div className="list__item-img">
+          <img className="list__img--box" src={pic2} alt="Pic 2" />
+        </div>
         <div>
           <p className="list__title">Бонус за регистрацию</p>
           <Mobile>

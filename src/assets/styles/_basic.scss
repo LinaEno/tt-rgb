@@ -18,12 +18,13 @@ html {
 body {
   font-family: "Gilroy", sans-serif;
   font-weight: 400;
-  background-color: #272d3d;
+  background-color: $bg-color;
   position: relative;
   @media screen and (max-width: 767px) {
     background-image: url("../images/blur1.png");
     background-position: bottom right;
     background-repeat: no-repeat;
+    background-size: cover;
   }
   @media screen and (min-width: 768px) {
     background-image: url("../images/blur2.png"), url("../images/blur3.png");

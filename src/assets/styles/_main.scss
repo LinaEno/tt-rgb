@@ -16,7 +16,10 @@
   height: 100vh;
   flex-direction: column;
   justify-content: space-between;
-  overflow: hidden;
+  overflow: auto;
+  @media screen and (min-width: 768px) {
+    overflow: hidden;
+  }
 }
 .main__group {
   position: absolute;
@@ -25,4 +28,3 @@
   right: -178px;
   top: 127.81px;
 }
-// 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

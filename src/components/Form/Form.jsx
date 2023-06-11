@@ -1,24 +1,20 @@
 // eslint-disable-next-line no-unused-vars
-import React, { useState } from "react";
-import { useForm } from "react-hook-form";
+import React from "react";
+import { Controller, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import PhoneInput from "react-phone-number-input";
 import "react-phone-number-input/style.css";
-import sendFormData from "../../utils/sendFunction";
-
-// const EMAIL = "lbenotik@gmail.com";
+import emailjs from "emailjs-com";
 
 const Form = () => {
-  const [number, setNumber] = useState("");
-
   const schema = yup.object().shape({
     username: yup
       .string()
       .required("Введите имя и фамилию")
       .matches(/^[a-zA-Zа-яА-Я]+ [a-zA-Zа-яА-Я]+$/, "Введите имя и фамилию"),
-    // phone: yup.string().required("Введите номер телефона"),
     email: yup.string().email().required("Некорректный email"),
+    phone: yup.string().required("Введите телефон"),
   });
 
   const {
@@ -26,17 +22,27 @@ const Form = () => {
     handleSubmit,
     formState: { errors },
     reset,
+    control,
   } = useForm({
     resolver: yupResolver(schema),
   });
 
-  const onSubmit = ({ username, email }) => {
+  const onSubmit = ({ username, email, phone }) => {
     const data = {
       username,
-      phone: number,
+      phone,
       email,
     };
-    sendFormData("lbenotik@gmail.com", "Новое письмо", JSON.stringify(data));
+
+    emailjs
+      .send("service_x8k6s4x", "template_ifm0rif", data, "5vKKz0cfzDQQ1vVU3")
+      .then((response) => {
+        console.log("Success!", response.status, response.text);
+      })
+      .catch((error) => {
+        console.error("Error sending email:", error);
+      });
+
     reset();
   };
 
@@ -55,17 +61,26 @@ const Form = () => {
             placeholder="Ваше имя и фамилия"
           />
         </label>
-        {errors.username && <div>{errors.username.message}</div>}
-        <PhoneInput
-          className="form__input"
-          defaultCountry="UA"
-          international
-          value={number}
-          onChange={setNumber}
-          placeholder="Ваш номер телефона"
-          // {...register("phone")}
+        {errors.username && (
+          <div className="form__error">{errors.username.message}</div>
+        )}
+        <Controller
+          control={control}
+          name="phone"
+          render={({ field: { onChange, value } }) => (
+            <PhoneInput
+              className="form__input"
+              defaultCountry="UA"
+              international
+              value={value}
+              onChange={onChange}
+              placeholder="Ваш номер телефона"
+            />
+          )}
         />
-        {errors.phone && <div>{errors.phone.message}</div>}
+        {errors.phone && (
+          <div className="form__error">{errors.phone.message}</div>
+        )}
         <label htmlFor="email">
           <input
             className="form__input"
@@ -75,7 +90,9 @@ const Form = () => {
             placeholder="Ваш email"
           />
         </label>
-        {errors.email && <div>{errors.email.message}</div>}
+        {errors.email && (
+          <div className="form__error">{errors.email.message}</div>
+        )}
         <button className="form__btn" type="submit">
           Записаться бесплатно
         </button>

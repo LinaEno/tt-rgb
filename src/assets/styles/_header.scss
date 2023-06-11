@@ -9,6 +9,7 @@
   }
   @media screen and (min-width: 1200px) {
     padding: 24px 56px;
+    margin-top: 10px;
   }
 }
 
@@ -40,10 +41,10 @@
   font-size: 11px;
   line-height: calc(8 / 11);
   align-items: center;
-  color: #ffffff;
-  background-color: #302e5a;
-  border-radius: 5.93333px;
-  padding: 6px 6.7px 5.43px 6px;
+  color: $main-text-color;
+  background-color: $header-bg-color;
+  border-radius: 6px;
+  padding: 6px 7px 5px 6px;
   @media screen and (min-width: 768px) {
     font-size: 14px;
     line-height: calc(14 / 14);
@@ -53,8 +54,8 @@
 }
 
 .header__icon {
-  width: 12.55px;
-  height: 12.55px;
+  width: 13px;
+  height: 13px;
   @media screen and (min-width: 768px) {
     width: 15px;
     height: 15px;
